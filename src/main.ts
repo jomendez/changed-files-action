@@ -147,7 +147,7 @@ async function run(): Promise<void> {
         `Action failed. summiting package.json or pachage-lock.json with other files is not allowed.
          - Please create a separated PR with only the changes for package.json and/or pachage-lock.json.
          - Run full regretion test and make sure no visual component is broken.
-         - Create a new PR with the resto of your changes.
+         - Create a new PR with the rest of your changes.
         `
       );
     }
