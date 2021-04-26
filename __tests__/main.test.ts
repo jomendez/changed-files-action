@@ -1,4 +1,4 @@
-import {packageFileModifiedWithOtherFiles, commitingWithPackageFileRemoved} from '../src/main'
+import {packageFileModifiedWithOtherFiles, commitingWithPackageFileRemoved} from '../src/main';
 
 test.each([
   [['config.json', 'package.json', 'package-lock.json'], ['package.json', 'package-lock.json'], true],
@@ -13,8 +13,8 @@ test.each([
   [['package-lock.json'], ['package.json'], false],
   [['config.json', 'package.json', 'package-lock.json'], [], false]
 ])('.packageFileModifiedWithOtherFiles(%s, %s)', (all, modified, expected) => {
-  expect(packageFileModifiedWithOtherFiles(all, modified)).toBe(expected)
-})
+  expect(packageFileModifiedWithOtherFiles(all, modified)).toBe(expected);
+});
 
 test.each([
   [['config.json', 'package.json', 'package-lock.json'], true],
@@ -23,5 +23,5 @@ test.each([
   [['config.json', 'script.ts', 'package-lock.ts'], false],
   [['config.json', 'package.js', 'package-lock.yml'], false]
 ])('.commitingWithPackageFileRemoved(%s)', (removed, expected) => {
-  expect(commitingWithPackageFileRemoved(removed)).toBe(expected)
-})
+  expect(commitingWithPackageFileRemoved(removed)).toBe(expected);
+});
