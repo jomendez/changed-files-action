@@ -1,0 +1,52 @@
+{
+    "name": "changed-files-action",
+    "description": "GitHub action that gets all changed files in a pull request or push and reject the PR if package.json or package-loc.json is among the modified files.",
+    "version": "1.0.0",
+    "private": true,
+    "author": "jomendez",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jomendez/changed-files-action.git"
+    },
+    "homepage": "https://github.com/jomendez/changed-files-action#readme",
+    "bugs": {
+        "url": "https://github.com/jomendez/changed-files-action/issues"
+    },
+    "scripts": {
+        "build": "tsc",
+        "clean": "rimraf dist/**/* lib/**/*",
+        "format": "prettier --write **/*.ts",
+        "format:check": "prettier --check **/*.ts",
+        "lint": "eslint src/**/*.ts",
+        "package": "ncc build",
+        "test": "jest",
+        "all": "yarn clean && yarn build && yarn format && yarn package && yarn test"
+    },
+    "main": "lib/main.js",
+    "engines": {
+        "node": "^12.0.0"
+    },
+    "dependencies": {
+        "@actions/core": "^1.2.2",
+        "@actions/github": "^2.1.0"
+    },
+    "devDependencies": {
+        "@octokit/rest": "^16.40.2",
+        "@types/jest": "^26.0.23",
+        "@types/node": "^12.12.29",
+        "@typescript-eslint/parser": "^2.8.0",
+        "@zeit/ncc": "^0.21.0",
+        "eslint": "^7.25.0",
+        "eslint-plugin-github": "^3.4.0",
+        "eslint-plugin-jest": "^23.6.0",
+        "eslint-plugin-prettier": "^3.1.2",
+        "jest": "^25.1.0",
+        "jest-circus": "^25.1.0",
+        "js-yaml": "^3.13.1",
+        "prettier": "^1.19.1",
+        "rimraf": "^3.0.0",
+        "ts-jest": "^25.1.0",
+        "typescript": "^3.6.4"
+    }
+}
