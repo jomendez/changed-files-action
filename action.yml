@@ -1,9 +1,9 @@
 name: Get All Changed Files
-description: Get all of the files changed/modified in a pull request or push's commits.
-author: Jitterbit, Inc.
+description: Get all of the files changed/modified in a pull request or push's commits, make sure package.json and/or package-lock.json are not submitted with other files.
+author: jomendez.
 branding:
   icon: file
-  color: purple
+  color: blue
 runs:
   using: node12
   main: dist/index.js
@@ -14,12 +14,6 @@ inputs:
       Users shouldn't need to set this themselves.
     required: true
     default: ${{ github.token }}
-  format:
-    description: >
-      Format of the steps output context.
-      Can be 'space-delimited', 'csv', or 'json'.
-    required: true
-    default: space-delimited
 outputs:
   all:
     description: >
