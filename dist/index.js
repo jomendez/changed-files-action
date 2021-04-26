@@ -2281,7 +2281,7 @@ function run() {
 }
 function packageFileModifiedWithOtherFiles(all, modified) {
     const filesChangedFiltered = all.filter(x => x !== 'package.json' && x !== 'package-lock.json');
-    return !!filesChangedFiltered && (modified.includes('package.json') || modified.includes('package-lock.json'));
+    return (!!filesChangedFiltered && filesChangedFiltered.length > 0) && (modified.includes('package.json') || modified.includes('package-lock.json'));
 }
 exports.packageFileModifiedWithOtherFiles = packageFileModifiedWithOtherFiles;
 function commitingWithPackageFileRemoved(removed) {

@@ -158,7 +158,11 @@ async function run(): Promise<void> {
 
 export function packageFileModifiedWithOtherFiles(all: string[], modified: string[]) {
   const filesChangedFiltered = all.filter(x => x !== 'package.json' && x !== 'package-lock.json')
-  return (!!filesChangedFiltered && filesChangedFiltered.length > 0) && (modified.includes('package.json') || modified.includes('package-lock.json'))
+  return (
+    !!filesChangedFiltered &&
+    filesChangedFiltered.length > 0 &&
+    (modified.includes('package.json') || modified.includes('package-lock.json'))
+  )
 }
 
 export function commitingWithPackageFileRemoved(removed: string[]) {
